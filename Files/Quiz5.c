@@ -100,13 +100,6 @@ int extractParameters(int argc, char* argv[]) {
         amountTime = atoi(argv[2]);
         amountAccounts = atoi(argv[3]);
         initialValue = atof(argv[4]);
-        
-        /*printf("Thread Num: %d\n", threadNum);
-        printf("Amount Time: %d\n", amountTime);
-        printf("Amount Accounts: %d\n", amountAccounts);
-        printf("Initial Value: %f\n", initialValue);
-        
-        for(;;);*/
 
         return (1);
     }
@@ -136,18 +129,12 @@ void *useBank(void* attr) {
         pthread_mutex_t *mut1 = a->mutexes + indexes[0];
 		pthread_mutex_t *mut2 = a->mutexes + indexes[1];
 		
-		//printf("ID: %ld  - Money: %f\n", ac1->id, ac1->money);
-		//printf("ID: %ld  - Money: %f\n", ac2->id, ac2->money);
-		
 		int r1 = pthread_mutex_trylock(mut1);
 		int r2 = pthread_mutex_trylock(mut2);
 
 		if ((r1 == 0) && (r2 == 0)) {
 			double amount = rand() % ((int) ac1->money);
 			int h = transfer(ac1, ac2, amount);
-			
-			//printf("ID: %ld  - Money: %f\n", ac1->id, ac1->money);
-			//printf("ID: %ld  - Money: %f\n\n", ac2->id, ac2->cmoney);
 			
 			pthread_mutex_unlock(mut2);
 			pthread_mutex_unlock(mut1);
