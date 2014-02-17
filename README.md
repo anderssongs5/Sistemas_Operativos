@@ -8,4 +8,4 @@ Repositorio contenedor de los archivos del Laboratorio # 5 de la asignatura Sist
 
 Todo el desarrollo del laboratorio se ha realizado bajo el lenguaje de programación C con el objetivo de poner en práctica los conceptos relacionados con las primitivas de sincronización.
 
-El archivo Output.txt contiene los datos de salida al evaluar los vectores de prueba del archivo VectorTest2.txt
+Tanto el archivo VectorsTest1.txt como VectorsTest2.txt son archivos de vectores de prueba; sin embargo, el archivo Output.txt contiene los datos de salida al evaluar los vectores del segundo archivo.
